@@ -27,7 +27,7 @@
     ...
     </route>
     -->
-    <route id="ContactPim.Controller.ContactPimController" path="/send" methods="post">
-        <default key="_controller">ContactPim\Controller\ContactPimController::sendEmail</default>
+    <route id="contactpim.sendemail" path="/send">
+        <default key="_controller">ContactPim\Controller\ContactPimController::sendAction</default>
     </route>
 </routes>

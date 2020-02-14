@@ -1,13 +1,14 @@
-<form action="{url path="/send"}" method="post">
-    <div class="form-group">
-        <h4>Vous avez un problme ?</h4>
-        <label for="exampleFormControlInput1">Votre adresse email</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@exemple.com">
+<form action="{url path="/send"}" method="post" class="form_contact_pim">
+    <div class="container">
+        <h4 class="contact_pim_h4">Vous avez un problme ?</h4>
+        <div class="form-group contact_pim_div">
+            <label for="email_contact">Votre adresse email</label>
+            <input name="email_contact" type="email" class="form-control" id="email_contact" placeholder="name@example.com">
+        </div>
+        <div class="form-group contact_pim_div">
+            <label for="contact_pim">Votre message</label>
+            <textarea name="contact_pim" class="form-control" id="ontact_pim" rows="3"></textarea>
+            <button type="submit" class="btn text-uppercase textSize16 buttonRoundBlack actionBtn marginTop10">Envoyer</button>
+        </div>
     </div>
-    </div>
-    <div class="container form-group">
-        <label for="exampleFormControlTextarea1">Votre message</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Envoyer</button>
 </form>

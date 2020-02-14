@@ -30,7 +30,7 @@
 
     
     <hooks>
-        <hook id="contactpim.hook" class="ContactPim\Hook\ContactPimHook">
+        <hook id="contactpim.hook" class="ContactPim\Hook\ContactPimHook" >
             <tag name="hook.event_listener" event="main.footer-top" type="front" method="onFooterBody" />
         </hook>
     </hooks>
