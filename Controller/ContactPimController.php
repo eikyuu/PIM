@@ -17,17 +17,17 @@ class ContactPimController extends BaseFrontController
         
         $text = $this->getRequest()->get("contact_pim");
         $email = $this->getRequest()->get("email_contact");
-
+        $viewMail = $this->render("mail", 
+        [
+            'text' => $text,
+            'email'=> $email
+        ]);
         $message = \Swift_Message::newInstance($subject)
             ->addFrom(ConfigQuery::getStoreEmail())
             ->addTo("vduguet@avidsen.com")
-            ->setBody($this->render("mail", 
-                [
-                    'text' => $text,
-                    'email'=> $email
-                ]), 
+            ->setBody($viewMail,
                 "text/html");
-                
+
         $this->getMailer()->send($message);
         header('Location: /');
 

@@ -1,9 +1,9 @@
 <form action="{url path="/send"}" method="post" class="form_contact_pim">
-    {flash type="flashMessageSuccess"}
-    <div class="alert alert-success  ">{$MESSAGE}</div>
-    {/flash}
     <div class="container">
-        <h4 class="contact_pim_h4">Vous avez un problme ?</h4>
+        {flash type="flashMessageSuccess"}
+            <div class="alert alert-success  ">{$MESSAGE}</div>
+        {/flash}
+        <h4 class="contact_pim_h4">Vous avez un problème ?</h4>
         <div class="form-group contact_pim_div">
             <label for="email_contact">Votre adresse email</label>
             <input name="email_contact" type="email" class="form-control" id="email_contact" placeholder="name@example.com">
