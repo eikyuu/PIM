@@ -1,4 +1,7 @@
 <form action="{url path="/send"}" method="post" class="form_contact_pim">
+
+    <input type="hidden" name="current_url" value="{navigate to="current"}"> {* the url the user is redirected to on login success *}
+
     <div class="container">
         {flash type="flashMessageSuccess"}
             <div class="alert alert-success  ">{$MESSAGE}</div>

@@ -7,6 +7,7 @@ use Tags\Model\TagsQuery;
 use Thelia\Controller\Front\BaseFrontController;
 use Thelia\Model\ProductQuery;
 use Thelia\Model\ConfigQuery;
+use Thelia\Tools\URL;
 
 class ContactPimController extends BaseFrontController
 {
@@ -29,10 +30,17 @@ class ContactPimController extends BaseFrontController
                 "text/html");
 
         $this->getMailer()->send($message);
-        header('Location: /');
-
+        
         $flashMessageSuccess = "Votre message a été envoyé avec succès";
         $this->getSession()->getFlashBag()->set('flashMessageSuccess', $flashMessageSuccess);
+
+        if (null != $successUrl = $this->getRequest()->get('current_url')) {
+            $response = $this->generateRedirect(
+                URL::getInstance()->absoluteUrl($successUrl)
+            );
+
+            return $response;
+        }
         exit();
         
     }
