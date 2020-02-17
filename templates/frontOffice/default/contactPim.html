@@ -1,4 +1,7 @@
 <form action="{url path="/send"}" method="post" class="form_contact_pim">
+    {flash type="flashMessageSuccess"}
+    <div class="alert alert-success  ">{$MESSAGE}</div>
+    {/flash}
     <div class="container">
         <h4 class="contact_pim_h4">Vous avez un problme ?</h4>
         <div class="form-group contact_pim_div">

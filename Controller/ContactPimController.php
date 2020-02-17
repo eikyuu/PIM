@@ -27,8 +27,12 @@ class ContactPimController extends BaseFrontController
                     'email'=> $email
                 ]), 
                 "text/html");
+                
         $this->getMailer()->send($message);
         header('Location: /');
+
+        $flashMessageSuccess = "Votre message a été envoyé avec succès";
+        $this->getSession()->getFlashBag()->set('flashMessageSuccess', $flashMessageSuccess);
         exit();
         
     }
